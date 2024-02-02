@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
-    "dev-server": "node server.js"
+    "start-static": "serve -s dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +34,8 @@
     "@babel/preset-typescript": "^7.23.3",
     "@babel/register": "^7.23.7",
     "babel-plugin-styled-components": "^2.1.4",
+    "gh-pages": "^6.1.1",
+    "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "webpack-dev-server": "^4.15.1"
