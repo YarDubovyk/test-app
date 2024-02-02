@@ -11,14 +11,14 @@ const app = express();
 app.use(express.static('dist'));
 
 app.get('*', (req, res) => {
-    const context = {};
-    const markup = ReactDOMServer.renderToString(
-        <StaticRouter location={req.url} context={context}>
-            <App />
-        </StaticRouter>
-    );
+  const context = {};
+  const markup = ReactDOMServer.renderToString(
+    <StaticRouter location={req.url} context={context}>
+      <App />
+    </StaticRouter>
+  );
 
-    res.send(`
+  res.send(`
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -38,5 +38,5 @@ app.get('*', (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

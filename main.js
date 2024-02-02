@@ -1,4 +1,3 @@
-// main.js
 require('@babel/register')({
     presets: ['@babel/preset-react', '@babel/preset-env']
 });
